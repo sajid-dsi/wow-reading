@@ -9,17 +9,14 @@ This cheatsheet is prepared as part of my exam for CIS775 (Algorithm Analysis)
     KRUSKAL(V, E, w)
 
     ```
-    **A ← { }**           ▷ Set A will ultimately contains the edges of the MST
+    A ← { }          ▷ Set A will ultimately contains the edges of the MST
     for each vertex v in V
-         do **MAKE-SET(v)**
+         do MAKE-SET(v)
     sort _E_ into nondecreasing order by weight w
-    for each *(u, v)* taken from the sorted list
-      do if **FIND-SET(u)** != **FIND-SET(v)** then
-          _A ← A ∪ {(u, v)}_
-          *UNION(u, v)*
-    return _A_
+    for each (u, v) taken from the sorted list
+      do if FIND-SET(u) != FIND-SET(v) then
+          A ← A ∪ {(u, v)}
+          UNION(u, v)
+    return A
     ```
 **Runtime:** *O(ElogV)*
-
-for each vertex v in V
-     do **MAKE-SET(v)**
